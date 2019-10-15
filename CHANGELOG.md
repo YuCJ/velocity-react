@@ -1,3 +1,22 @@
+### v1.4.3
+
+#### Merge with `google-fabric/velocity-react@1.4.3`
+
+Include changes from `1.4.0` to `1.4.3`:
+
+- Adds `timeout` prop to `Transition` in test to avoid a PropTypes warning.
+- Uses a `<Transition>` element in test/server mode to keep react-dom from warning
+about TransitionGroup’s props placed on HTML children.
+- Fixes false children bug #240. (Thanks for the report, @tiffanytangt!)
+- Dependency upgrades! No new features.
+  - Changes our `componentWillUpdate` call to `componentDidUpdate` to eliminate a
+     React 16.3 StrictMode warning
+  - Migration to [react-transition-group](https://github.com/reactjs/react-transition-group) v2
+  - Switches from lodash 3 to lodash 4
+  - Changes demo to use React 16.3
+- There still are StrictMode warnings due to `react-transition-group` still using
+the older APIs.
+
 ### v1.4.2 (2019-08-22)
 
 Update package.json#dependencies: lodash@^4 -> lodash@^4.0.0
@@ -15,8 +34,6 @@ Fix lodash/pluck with lodash/map
 ### v1.3.3 (2017-11-30):
 
 Bump lodash version to ^4
-
-## ======== @twreporter/velocity-react
 
 ### v1.3.3 (2017-05-19):
 

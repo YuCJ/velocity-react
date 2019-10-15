@@ -71,11 +71,11 @@ class VelocityComponent extends React.Component {
     }
   }
 
-  componentWillUpdate(newProps) {
-    if (!_.isEqual(newProps.animation, this.props.animation)) {
-      if (newProps.interruptBehavior === 'stop') {
+  componentDidUpdate(oldProps) {
+    if (!_.isEqual(oldProps.animation, this.props.animation)) {
+      if (this.props.interruptBehavior === 'stop') {
         this._stopAnimation();
-      } else if (newProps.interruptBehavior === 'finish') {
+      } else if (this.props.interruptBehavior === 'finish') {
         this._finishAnimation();
       }
 
